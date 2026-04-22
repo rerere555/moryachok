@@ -1,0 +1,81 @@
+
+.product-card { border: 1px solid #ccc; padding: 10px; margin: 10px; width: 250px; display: inline-block; vertical-align: top; }
+.price { color: green; font-weight: bold; }
+ body {
+     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+     min-height: 100vh;
+ }
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.product-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.product-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.product-card .description {
+    color: #7f8c8d;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+.btn-add {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s;
+    width: 100%;
+}
+.btn-add:hover {
+    background: #2980b9;
+    color: white;
+}
+.cart-badge {
+    position: relative;
+    top: -8px;
+    right: -5px;
+}
+.admin-btn {
+    border: 2px solid #ffc107;
+    color: #ffc107;
+    transition: all 0.3s;
+}
+.admin-btn:hover {
+    background: #ffc107;
+    color: #000;
+}
+.welcome-section {
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.empty-menu {
+    text-align: center;
+    padding: 50px;
+    background: white;
+    border-radius: 15px;
+}
