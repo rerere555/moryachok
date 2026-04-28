@@ -15,7 +15,7 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (\PDOException $e) {
-    // В учебных целях можно вывести ошибку, на боевом сервере - логировать
+    
     throw new \PDOException($e->getMessage());
 }
 ?>
