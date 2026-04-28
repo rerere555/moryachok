@@ -13,13 +13,12 @@ $success = false;
 
 // Если форма отправлена
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_POST['customer_name'] ?? '');
-    $phone = trim($_POST['customer_phone'] ?? '');
+    $name = trim($_POST['customer_name'] );
+    $phone = trim($_POST['customer_phone'] );
 
     if ($name && $phone) {
         try {
             $pdo->beginTransaction();
-
             // 1. Считаем общую сумму
             $total_price = 0;
             $ids = array_keys($_SESSION['basket']);
@@ -50,12 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         VALUES (:order_id, :product_id, :quantity, :price_at_purchase)";
             $stmtItem = $pdo->prepare($sqlItem);
 
-            foreach ($products as $p) {
+            foreach ($products as $product) {
                 $stmtItem->execute([
                         ':order_id' => $orderId,
-                        ':product_id' => $p['id'],
-                        ':quantity' => $_SESSION['basket'][$p['id']],
-                        ':price_at_purchase' => $p['price']
+                        ':product_id' => $product['id'],
+                        ':quantity' => $_SESSION['basket'][$product['id']],
+                        ':price_at_purchase' => $product['price']
                 ]);
             }
 
@@ -79,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Оформление заказа</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">

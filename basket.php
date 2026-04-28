@@ -21,8 +21,8 @@ if (!empty($_SESSION['basket'])) {
 <head>
     <meta charset="UTF-8">
     <title>Корзина</title>
-    <link rel="stylesheet" href="main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">
@@ -39,7 +39,7 @@ if (!empty($_SESSION['basket'])) {
                 <th>Сумма</th>
             </tr>
             <?php foreach ($basket_items as $item):
-                $qty = $_SESSION['basket'][$item['id']]; // Исправлены кавычки
+                $qty = $_SESSION['basket'][$item['id']];
                 $sum = $item['price'] * $qty;
                 $total_sum += $sum;
                 ?>
