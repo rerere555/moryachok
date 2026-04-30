@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
-    $product_id = (int)$_POST['product_id'];
+    $product_id = $_POST['product_id'];
 
     if (!isset($_SESSION['basket'])) {
         $_SESSION['basket'] = [];
@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
     }
 }
 
-// Возвращаемся на предыдущую страницу или на главную
-$referer = $_SERVER['HTTP_REFERER'] ?? 'index.php';
-header('Location: ' . $referer);
+
+header('Location:/ ');
 exit;

@@ -8,12 +8,11 @@ $total_sum = 0;
 if (!empty($_SESSION['basket'])) {
     $ids = array_keys($_SESSION['basket']);
 
-    // Формируем строку плейсхолдеров: '?,?,?'
     $placeholders = implode(',', array_fill(0, count($ids), '?'));
 
     $stmt = $pdo->prepare("SELECT * FROM products WHERE id IN ($placeholders)");
     $stmt->execute($ids);
-    $basket_items = $stmt->fetchAll(); // Вот здесь переменная заполняется данными
+    $basket_items = $stmt->fetchAll(); 
 }
 ?>
 <!DOCTYPE html>

@@ -14,8 +14,8 @@ $options = [
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
+} catch (PDOException $e) {
     
-    throw new \PDOException($e->getMessage());
+    die("не удалось подключиться" . $e->getMessage());
 }
 ?>
