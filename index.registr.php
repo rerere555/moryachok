@@ -38,12 +38,12 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
                 </li>
                 <li class="nav-item">
                     <a class="nav-link position-relative" href="basket.php">
-                        <!-- <i class="bi bi-cart3"></i> Корзина
+                        <i class="bi bi-cart3"></i> Корзина
                         <?php if ($basket_count > 0): ?>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge">
                                 <?= $basket_count ?>
                             </span>
-                        <?php endif; ?> -->
+                        <?php endif; ?>
                     </a>
                 </li>
             </ul>
@@ -62,7 +62,7 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
                 <p><i class="bi bi-clock"></i> Работаем ежедневно с 08:00 до 15:00</p>
                 <p><i class="bi bi-telephone"></i> +7 (996) 471-83-62</p>
             </div>
-            <!-- <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center">
                 <?php if ($basket_count > 0): ?>
                     <a href="basket.php" class="cart-btn">
                         <i class="bi bi-cart-check"></i> Перейти к заказу
@@ -74,7 +74,7 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
                         <p class="mt-2">Корзина пуста</p>
                     </div>
                 <?php endif; ?>
-            </div> -->
+            </div>
         </div>
     </div>
 
@@ -108,12 +108,12 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
                         <div class="product-price">
                             <?= number_format($product['price']) ?> ₽
                         </div>
-                        <!-- <form action="add_basket.php" method="POST" class="add-to-cart-form">
+                        <form action="add_basket.php" method="POST" class="add-to-cart-form">
                             <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                             <button type="submit" class="btn-add">
                                 <i class="bi bi-cart-plus"></i> В корзину
                             </button>
-                        </form> -->
+                        </form>
                     </div>
                 </div>
             <?php endforeach; ?>

@@ -18,23 +18,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($name && $phone) {
         try {
-            $pdo->beginTransaction();
-            // 1. Считаем общую сумму
-            $total_price = 0;
-            $ids = array_keys($_SESSION['basket']);
-            $placeholders = implode(',', array_fill(0, count($ids), '?'));
-
-            $stmt = $pdo->prepare("SELECT id, price FROM products WHERE id IN ($placeholders)");
-            $stmt->execute($ids);
-            $products = $stmt->fetchAll();
-
-            foreach ($products as $p) {
-                $total_price += $p['price'] * $_SESSION['basket'][$p['id']];
-            }
+            if ($name && $phone) {
+    $total_price = 0;
+    foreach ($_SESSION['basket'] as $id => $quantity) {
+        $stmt = $pdo->prepare("SELECT price FROM products WHERE id = ?");
+        $stmt->execute([$id]);
+        $product = $stmt->fetch();
+        if ($product) {
+            $total_price += $product['price'] * $quantity;
+        }
+    }
+}
 
             // 2. Создаем заказ
             $sql = "INSERT INTO orders (customer_name, customer_phone, total_price, status, created_at) 
-                    VALUES (:name, :phone, :total, 'новый', NOW())";
+                    VALUES (:customer_name, :customer_phone, :total, 'новый', NOW())";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                     ':name' => $name,

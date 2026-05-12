@@ -1,22 +1,18 @@
 <?php
 require 'bdconnect.php';
 
-$id = $_GET['id'] ?? 0;
+$id = $_GET['id'];
 
 if ($id) {
-    $stmt = $pdo->prepare("SELECT image FROM products WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT image FROM products WHERE id = :id");
     $stmt->execute([$id]);
     $product = $stmt->fetch();
 
     if ($product && !empty($product['image'])) {
-        // Определяем тип изображения
-        $finfo = new finfo(FILEINFO_MIME_TYPE);
-        $mime_type = $finfo->buffer($product['image']);
-
-        header("Content-Type: " . $mime_type);
-        echo $product['image'];
-        exit;
-    }
+    header('Content-Type: image/jpeg');
+    echo $product['image'];
+    exit;
+}
 }
 
 // Если изображения нет - отдаём заглушку
