@@ -15,15 +15,15 @@
     <form action="/" method="POST">
         <label>имя</label><br>
         <input type="name" name="name" required><br>
-        <label>Email</label><br>
-        <input type="email" name="email" required><br>
+        <label>телефон</label><br>
+        <input type="phone" name="phone" required><br>
         
         <label>Пароль</label><br>
         <input type="password" name="password" required><br><br>
         
-        <a href="index.php" type="submit"  name="login">Зарегистрироваться</a><br>
+        <a href="index.registr.php" type="submit"  name="login">войти</a><br>
 
-        <a href="authorization.php">у вас уже есть аккаунт? Войдите</a>
+        <
     </form>
     </form>
 </body>

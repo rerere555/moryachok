@@ -16,5 +16,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
 }
 
 
-header('Location:/ ');
+header('Location:/index.registr.php ');
 exit;

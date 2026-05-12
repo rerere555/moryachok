@@ -28,7 +28,7 @@ if (!empty($_SESSION['basket'])) {
     <h1>Ваша корзина</h1>
 
     <?php if (empty($basket_items)): ?>
-        <p>Корзина пуста. <a href="index.php">Вернуться в меню</a></p>
+        <p>Корзина пуста. <a href="index.registr.php">Вернуться в меню</a></p>
     <?php else: ?>
         <table class="table table-bordered">
             <tr>

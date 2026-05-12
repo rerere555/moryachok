@@ -24,11 +24,7 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
         <a class="navbar-brand" href="index.php">
             <i class="bi bi-shop"></i>  Морячок
         </a>
-        
-        <a class="nav-link" href="registr.php">
-                Регистрация</a> 
-        
-
+    
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item me-3">

@@ -4,7 +4,7 @@ require 'bdconnect.php';
 
 // Если корзина пуста, отправляем в меню
 if (empty($_SESSION['basket'])) {
-    header('Location: index.php');
+    header('Location: index.registr.php');
     exit;
 }
 
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if ($success): ?>
         <div class="alert alert-success">
             <h2><?= $orderMessage ?></h2>
-            <a href="index.php" class="btn btn-primary">Вернуться в меню</a>
+            <a href="index.registr.php" class="btn btn-primary">Вернуться в меню</a>
         </div>
     <?php else: ?>
         <?php if ($error): ?>

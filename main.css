@@ -16,14 +16,14 @@ body {
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white !important;
+    color: white ;
 }
 .nav-link {
-    color: rgba(255,255,255,0.9) !important;
+    color: rgba(255,255,255,0.9) ;
     transition: color 0.3s;
 }
 .nav-link:hover {
-    color: white !important;
+    color: white ;
 }
 .cart-badge {
     font-size: 0.7rem;
