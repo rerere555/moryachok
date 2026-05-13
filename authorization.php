@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="main.css?v=<?= time() ?>">
 </head>
 <body>
+    <div class="body-registr ">
     <form action="" method="POST">
+        <div class="registr ">
     <h1>Вход</h1><br>
     <form action="/" method="POST">
         <label>имя</label><br>
@@ -22,8 +24,8 @@
         <input type="password" name="password" required><br><br>
         
         <a href="index.registr.php" type="submit"  name="login">войти</a><br>
-
-        <
+</div>
+</div>
     </form>
     </form>
 </body>

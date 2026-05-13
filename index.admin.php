@@ -27,24 +27,13 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
-                <a class="nav-link" href="registr.php">
-                                    Регистрация
-                </a> 
-                <a class="nav-link" href="admin.vhod.php">админ</a>
                 <li class="nav-item me-3">
                     <a class="nav-link" href="index.php">
                         <i class="bi bi-house"></i> Главная
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link position-relative" href="basket.php">
-                        <!-- <i class="bi bi-cart3"></i> Корзина
-                        <?php if ($basket_count > 0): ?>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge">
-                                <?= $basket_count ?>
-                            </span>
-                        <?php endif; ?> -->
-                    </a>
+                    
                 </li>
             </ul>
         </div>
@@ -62,19 +51,11 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
                 <p><i class="bi bi-clock"></i> Работаем ежедневно с 08:00 до 15:00</p>
                 <p><i class="bi bi-telephone"></i> +7 (996) 471-83-62</p>
             </div>
-            <!-- <div class="col-md-4 text-center">
-                <?php if ($basket_count > 0): ?>
-                    <a href="basket.php" class="cart-btn">
-                        <i class="bi bi-cart-check"></i> Перейти к заказу
-                        <span class="badge bg-light text-dark ms-2"><?= $basket_count ?></span>
-                    </a>
-                <?php else: ?>
-                    <div class="text-muted">
-                        <i class="bi bi-cart" style="font-size: 3rem;"></i>
-                        <p class="mt-2">Корзина пуста</p>
-                    </div>
-                <?php endif; ?>
-            </div> -->
+            <div class="col-md-4 text-center">
+                <div class="info-card">
+                <a href="add_product.php">добавить товар</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -108,12 +89,8 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
                         <div class="product-price">
                             <?= number_format($product['price']) ?> ₽
                         </div>
-                        <!-- <form action="add_basket.php" method="POST" class="add-to-cart-form">
-                            <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                            <button type="submit" class="btn-add">
-                                <i class="bi bi-cart-plus"></i> В корзину
-                            </button>
-                        </form> -->
+                        <a href="delete.product.php">удалить</a>
+                        <a href="edit.product.php">изменить</a>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -140,7 +117,7 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
             </div>
             <h5>Гарантия вкуса</h5>
             <p class="text-muted mb-0">Не вернём деньги, если не понравится</p>
-        </div>
+            </div>
     </div>
 </div>
 <footer class="footer">

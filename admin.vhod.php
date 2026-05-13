@@ -13,20 +13,17 @@
     <div class="body-registr ">
     <form action="" method="POST">
         <div class="registr ">
-    <h1>Регистрация</h1><br>
+    <h1>Вход</h1><br>
     <form action="/" method="POST">
         <label>имя</label><br>
         <input type="name" name="name" required><br>
-        <label>телефон</label><br>
-        <input type="phone" name="phone" required><br>
-        
         <label>Пароль</label><br>
-        <input type="password" name="password" required><br>
+        <input type="password" name="password" required><br><br>
         
-        <a href="index.registr.php" type="submit"  name="login">Зарегистрироваться</a><br>
-
-        <a href="authorization.php">У вас уже есть аккаунт? Войдите</a></div>
+        <a href="index.admin.php" type="submit"  name="login">войти</a><br>
+</div>
+</div>
     </form>
-    </div>
+    </form>
 </body>
 </html>
