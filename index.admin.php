@@ -89,7 +89,9 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
                         <div class="product-price">
                             <?= number_format($product['price']) ?> ₽
                         </div>
-                        <a href="delete.product.php">удалить</a>
+                        <a href="delete.product.php?id=<?= $product['id'] ?>" 
+                            onclick="return confirm('Удалить продукт    ?')">Удалить</a>
+
                         <a href="edit.product.php">изменить</a>
                     </div>
                 </div>

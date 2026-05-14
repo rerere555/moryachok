@@ -55,6 +55,7 @@ if (!empty($_SESSION['basket'])) {
 
         <a href="clear_basket.php" class="btn btn-danger">Очистить корзину</a>
         <a href="checkout.php" class="btn btn-success">Оформить заказ</a>
+        <a href="index.registr.php" class="btn btn-success">Вернуться на главную</a>
     <?php endif; ?>
 </div>
 </body>
