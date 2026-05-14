@@ -53,7 +53,7 @@ $basket_count = isset($_SESSION['basket']) ? array_sum($_SESSION['basket']) : 0;
             </div>
             <div class="col-md-4 text-center">
                 <div class="info-card">
-                <a href="add_product.php">добавить товар</a>
+                <a href="add_product.view.php">добавить товар</a>
                 </div>
             </div>
         </div>
